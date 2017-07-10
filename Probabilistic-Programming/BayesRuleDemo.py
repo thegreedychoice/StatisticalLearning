@@ -34,7 +34,7 @@ plt.ylim(0,1)
 plt.xlabel("Prior, $P(A) = p$")
 plt.ylabel("Posterior, $P(A|X)$, with $P(A) = p$")
 plt.title("Is my code bug-free?")
-f.show()
+f.savefig("plots/Is my code bug-free?.png")
 
 
 colours = ["#348ABD", "#A60628"]
@@ -50,8 +50,7 @@ plt.xticks([0.20, .95], ["Bugs Absent", "Bugs Present"])
 plt.title("Prior and Posterior probability of bugs present")
 plt.ylabel("Probability")
 plt.legend(loc="upper left");
-
-g.show()
+g.savefig("plots/Prior and Posterior probability of bugs present.png")
 
 plt.show()
 
