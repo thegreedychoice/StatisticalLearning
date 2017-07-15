@@ -24,10 +24,10 @@ plt.ylabel("probability of $k$")
 plt.xlabel("$k$")
 plt.title("Probability mass function of a Poisson random variable; differing \
 $\lambda$ values")
-plt.savefig("plots/pmfPoisson.png")
-plt.show()
+#plt.savefig("plots/pmfPoisson.png")
+#plt.show()
 
-plt.clf()
+#plt.clf()
 
 x = np.linspace(0, 4, 100)
 #Exponential Distribution is mostly used with continous values like time, temperature etc.
@@ -38,15 +38,19 @@ lambda_ = [0.5, 1]
 #the more the lambda, the less probability assigned to the larger values of random variable
 plt.figure(figsize=(12.5,4))
 for l, c in zip(lambda_, colours):
-    plt.plot(x, expo.pdf(x, scale=1. / l), lw=3,
-             color=c, label="$\lambda = %.1f$" % l)
-    dist = expo.pdf(x, scale=1. / l)
-    plt.fill_between(x, dist, color=c, alpha=.33)
+	dist = expo.pdf(x, scale=1. / l)
+	plt.plot(x ,dist, lw=3, color=c, label="$\lambda = %.1f$" % l)
+	plt.fill_between(x, dist, color=c, alpha=.33)
+
+    
+    
 
 plt.legend()
 plt.ylabel("PDF at $z$")
 plt.xlabel("$z$")
 plt.ylim(0, 1.2)
 plt.title("Probability density function of an Exponential random variable; differing $\lambda$");
-plt.savefig("plots/pdfExponential.png")
+#plt.savefig("plots/pdfExponential.png")
+
 plt.show()
+
