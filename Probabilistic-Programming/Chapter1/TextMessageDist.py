@@ -18,7 +18,7 @@ plt.title("Did user habits change over time?")
 plt.xlim(0, n_count_data)
 #plt.savefig("plots/textmessagedistribution.png")
 #plt.show()
-
+ 
 
 #Define a Pymc3 Model with parameters (lambda1, labda2, tau)
 #where lambda1 ~ Exponential(alpha)
@@ -54,7 +54,7 @@ lambda_1_samples = trace['lambda_1']
 lambda_2_samples = trace['lambda_2']
 tau_samples = trace['tau']
 
-print n_count_data
+
 plt.figure(figsize=(12.5, 10))
 #histogram of the samples:
 
@@ -89,7 +89,7 @@ plt.ylim([0, .75])
 plt.xlim([35, len(count_data)-20])
 plt.xlabel(r"$\tau$ (in days)")
 plt.ylabel("probability");
-plt.savefig("plots/parametersposteriordistribution.png")
+#plt.savefig("plots/parametersposteriordistribution.png")
 
 #Now a fundamental question is why do we need all these posterior samples, like What are we trying to acheive?
 #A good question is suppose we want to know for day 35, how many text messages did he receive?
@@ -124,7 +124,7 @@ plt.ylim(0,60)
 plt.bar(np.arange(len(count_data)), count_data, color="#348ABD", alpha=0.65, 
 	label="observed texts per day")
 plt.legend(loc="upper left")
-plt.savefig("plots/num_text_messages_per_day.png")
+#plt.savefig("plots/num_text_messages_per_day.png")
 plt.show()
 
 
